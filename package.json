@@ -1,15 +1,15 @@
 {
-  "name": "App",
+  "name": "app",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.mix.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DanielSchreurs/site-personnel.git"
+    "url": ""
   },
   "author": "Daniel Schreurs",
   "license": "ISC",
-  "homepage": "https://github.com/DanielSchreurs/site-personnel#readme",
+  "homepage": "https://github.com/hepl-dcc/SlideInOnScroll",
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "browser-sync": "^2.26.7",
