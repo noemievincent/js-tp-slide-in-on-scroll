@@ -12,21 +12,16 @@
 > Lors de vos cours de *web*, vous allez découvrir le langage *JavaScript* et le mettre en pratique pour apprendre à rendre vos pages web interactives.  
 
 * * *
+
+## Énoncé
+
 Dans le cadre de cet exercice, nous vous demandons de détecter l’apparition des images dans le flux afin de les faire apparaître de l’extérieur vers l’intérieur. 
-
-
 
 ![](./readme.gif)
 
 ⚠️ Cet exercice permet de manipuler des propriétés intéressantes de la fenêtre ainsi que des calculs sur la hauteur. Toutefois, nous retiendrons que cet exercice ne répond pas aux critères d'ergonomies que nous aimons retrouver dans vos projets. Tout de même, il permet de découvrir des fonctions intéressantes. Allons-y. 
 
-
-
-
-
-# Énoncé
-
-
+## Aide
 
 1. Écoutez le scroll de la fenêtre et déterminez si une des images `.slide-in` présentent dans la page vient d'apparaître. Nous considérer qu’elle apparaît quand elle devient visible à plus 50%. Dans ce cas, il faut jouer l’animation css en ajoutant la classe `.active`. Si elle n'est plus visible alors il faut retirer la classe. `.active`. 
 
@@ -51,3 +46,6 @@ function debounce(func, wait = 3, immediate = true) {
   }
 ~~~
 
+## Source
+
+[JavaScript30](https://javascript30.com) de [Wes Bos](https://wesbos.com)
