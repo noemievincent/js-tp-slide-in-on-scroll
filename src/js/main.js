@@ -1,8 +1,9 @@
 // Made with love by Domy 👌
 const ui = {
   init() {
-    document.body.removeChild(document.querySelector('.no-js__message'));
-    document.querySelector('.site-wrap').style.margin = '0';
+    //document.body.removeChild(document.querySelector('.no-js__message'));
+    document.documentElement.classList.add('js-enabled');
+    //document.querySelector('.site-wrap').style.margin = '0';
     this.images = document.querySelectorAll('.slide-in');
     this.countLoadedImages = 0;
     this.countImages = this.images.length;
