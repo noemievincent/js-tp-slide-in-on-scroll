@@ -1,43 +1,41 @@
-// Made with love by Domy 👌
-const ui = {
-  init() {
-    //document.body.removeChild(document.querySelector('.no-js__message'));
-    document.documentElement.classList.add('js-enabled');
-    //document.querySelector('.site-wrap').style.margin = '0';
-    this.images = document.querySelectorAll('.slide-in');
-    this.countLoadedImages = 0;
-    this.countImages = this.images.length;
-    this.checkImagesLoaded();
+const app = {
+  aImg: document.querySelectorAll('.slide-in'),
+  options: {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1
   },
-
-  checkImagesLoaded() {
-    this.images.forEach(image => {
-      image.addEventListener('load', loadEvt => {
-        this.countLoadedImages++;
-        if (this.countLoadedImages === this.countImages) {
-          ob.init(this.images);
-        }
-      });
-    });
+  iLoadedImg: 0,
+  setUp() {
+    document.body.classList.add('js-enabled');
+    this.iTotalNumberOfImg = this.aImg.length;
+    for (const eImg of this.aImg) {
+      eImg.addEventListener('load', () => {
+        this.checkLoadedImg();
+      })
+    }
   },
-};
-
-const ob = {
-  init(images) {
-    images.forEach(image => {
-      new IntersectionObserver(this.updateClassList).observe(image);
-    });
+  checkLoadedImg() {
+    this.iLoadedImg++;
+    if (this.iLoadedImg === this.iTotalNumberOfImg) {
+      this.obServeImg();
+    }
   },
-
-  updateClassList(entries) {
-    entries.forEach(entry => {
+  obServeImg() {
+    const observer = new IntersectionObserver(this.animateImg);
+    for (const eImg of this.aImg) {
+      observer.observe(eImg);
+    }
+  },
+  animateImg(entries, observer) {
+    for (const entry of entries) {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
       } else {
         entry.target.classList.remove('active');
       }
-    });
-  },
-};
+    }
+  }
 
-ui.init();
+}
+app.setUp();
